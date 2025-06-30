@@ -1,0 +1,23 @@
+name: Daily Job Runner
+
+on:
+  schedule:
+    # 每天上午10点UTC执行（相当于北京时间18:00）
+    # 如需北京时间上午10点执行，使用 0 2 * * *（UTC+8时区）
+    - cron: '0 2 * * *'
+
+jobs:
+  run-daily:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup workspace
+        run: |
+          cd wsdaily_linux_amd64
+          chmod +x wsdaily
+          
+      - name: Execute daily task
+        run: ./wsdaily --mode run
+        working-directory: ./wsdaily_linux_amd64

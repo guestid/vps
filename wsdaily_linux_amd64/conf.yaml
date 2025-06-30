@@ -1,0 +1,55 @@
+# Crontab 定时,每天10点
+cron: 0 40 17 * * * 
+# 多账号,注意缩进,不需要单双引号. 区 1 2 3 4 测试为99
+# pushplus推送 http://www.pushplus.plus/ 获取  (非必需,但请不要乱填)
+pushplus_token: 
+# api token 通过 BotFather 获取  (非必需,但请不要乱填)
+pushtg_token: 
+# 用户id 通过 IDBot 获取  (非必需,但请不要乱填)
+pushtg_chat_id: 
+# 黑名单 在名单内跳过日常,英文逗号分隔
+blacklist: 魏舷则,明徒生,明徒宝恶,明徒再科,明徒息,明徒向,明徒伤,明徒练型,明徒离,明徒生,明徒宝恶,明徒再科,明徒险张,明徒创
+# 扫荡任务  需要扫荡的在对应副本的player中输入角色名,多个角色使用英文逗号分隔  例如:张三,李四
+dungeonfast:
+  - dungeon: 光明顶
+    player: 
+  - dungeon: 天龙寺(困难)
+    player:
+  - dungeon: 血刀门
+    player:
+  - dungeon: 古墓派(简单)
+    player:
+  - dungeon: 古墓派(困难)
+    player:
+  - dungeon: 华山论剑
+    player:
+  - dungeon: 净念禅宗(简单)
+    player:
+  - dungeon: 净念禅宗(困难)
+    player:
+  - dungeon: 慈航静斋(简单)
+    player:
+  - dungeon: 慈航静斋(困难)
+    player:
+  - dungeon: 阴阳谷
+    player:  
+  - dungeon: 战神殿(简单)
+    player:
+  - dungeon: 战神殿(困难)
+    player: 
+logins:
+    - login: ${{ secrets.WAMUD_LOGIN1}}
+      password: ${{ secrets.WAMUD_PASSWORD1}}
+      server: 3
+    - login: ${{ secrets.WAMUD_LOGIN2}}
+      password: ${{ secrets.WAMUD_PASSWORD2}}
+      server: 3
+    - login: ${{ secrets.WAMUD_LOGIN3}}
+      password: ${{ secrets.WAMUD_PASSWORD3}}
+      server: 3
+    - login: ${{ secrets.WAMUD_LOGIN4}}
+      password: ${{ secrets.WAMUD_PASSWORD4}}
+      server: 3
+    - login: ${{ secrets.WAMUD_LOGIN5}}
+      password: ${{ secrets.WAMUD_PASSWORD4}}
+      server: 3      

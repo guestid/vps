@@ -44,11 +44,11 @@ jobs:
           sed -i "s/__PASSWORD5__/${{ secrets.WAMUD_PASSWORD5}}/g" wsdaily_linux_amd64/conf.yaml
         shell: bash          
       - name: Execute daily task
-        run: ./wsdaily --mode > run output.log
+        run: ./wsdaily --mode run > output.log
         working-directory: ./wsdaily_linux_amd64
         
       - name: Upload firmware directory
         uses: actions/upload-artifact@main
         with:
           name: ${{ env.WRT_DATE }}
-          path: ./wsdaily_linux_amd64/
+          path: ./wsdaily_linux_amd64/output.log

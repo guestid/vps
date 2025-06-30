@@ -1,10 +1,13 @@
 name: Daily Job Runner
 
 on:
+  #自动清理：每天早上6点
   schedule:
-    # 每天上午10点UTC执行（相当于北京时间18:00）
-    # 如需北京时间上午10点执行，使用 0 2 * * *（UTC+8时区）
-    - cron: '0 2 * * *'
+    - cron: 0 22 * * *
+  #手动清理
+  workflow_dispatch:
+
+permissions: write-all
 
 jobs:
   run-daily:

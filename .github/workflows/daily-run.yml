@@ -31,6 +31,7 @@ jobs:
           chmod +x wsdaily
           
       - name: Generate config
+        run: |      
           sed -i "s/__LOGIN1__/${{ secrets.WAMUD_LOGIN1}}/g" wsdaily_linux_amd64/conf.yaml
           sed -i "s/__PASSWORD1__/${{ secrets.WAMUD_PASSWORD1}}/g" wsdaily_linux_amd64/conf.yaml
           sed -i "s/__LOGIN2__/${{ secrets.WAMUD_LOGIN2}}/g" wsdaily_linux_amd64/conf.yaml
@@ -41,7 +42,7 @@ jobs:
           sed -i "s/__PASSWORD4__/${{ secrets.WAMUD_PASSWORD4}}/g" wsdaily_linux_amd64/conf.yaml
           sed -i "s/__LOGIN5__/${{ secrets.WAMUD_LOGIN5}}/g" wsdaily_linux_amd64/conf.yaml
           sed -i "s/__PASSWORD5__/${{ secrets.WAMUD_PASSWORD5}}/g" wsdaily_linux_amd64/conf.yaml
-          
+        shell: bash          
       - name: Execute daily task
         run: ./wsdaily --mode > run output.log
         working-directory: ./wsdaily_linux_amd64

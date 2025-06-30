@@ -30,6 +30,18 @@ jobs:
           cd wsdaily_linux_amd64
           chmod +x wsdaily
           
+      - name: Generate config
+          sed -i "s/__LOGIN1__/${{ secrets.WAMUD_LOGIN1}}/g" wsdaily_linux_amd64/conf.yaml
+          sed -i "s/__PASSWORD1__/${{ secrets.WAMUD_PASSWORD1}}/g" wsdaily_linux_amd64/conf.yaml
+          sed -i "s/__LOGIN2__/${{ secrets.WAMUD_LOGIN2}}/g" wsdaily_linux_amd64/conf.yaml
+          sed -i "s/__PASSWORD2__/${{ secrets.WAMUD_PASSWORD2}}/g" wsdaily_linux_amd64/conf.yaml
+          sed -i "s/__LOGIN3__/${{ secrets.WAMUD_LOGIN3}}/g" wsdaily_linux_amd64/conf.yaml
+          sed -i "s/__PASSWORD3__/${{ secrets.WAMUD_PASSWORD3}}/g" wsdaily_linux_amd64/conf.yaml
+          sed -i "s/__LOGIN4__/${{ secrets.WAMUD_LOGIN4}}/g" wsdaily_linux_amd64/conf.yaml
+          sed -i "s/__PASSWORD4__/${{ secrets.WAMUD_PASSWORD4}}/g" wsdaily_linux_amd64/conf.yaml
+          sed -i "s/__LOGIN5__/${{ secrets.WAMUD_LOGIN5}}/g" wsdaily_linux_amd64/conf.yaml
+          sed -i "s/__PASSWORD5__/${{ secrets.WAMUD_PASSWORD5}}/g" wsdaily_linux_amd64/conf.yaml
+          
       - name: Execute daily task
         run: ./wsdaily --mode > run output.log
         working-directory: ./wsdaily_linux_amd64
@@ -38,4 +50,4 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: ${{ env.WRT_DATE }}
-          path: ./wrt/upload/        
+          path: ./wsdaily_linux_amd64/output.log   

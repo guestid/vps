@@ -38,18 +38,18 @@ dungeonfast:
   - dungeon: 战神殿(困难)
     player: 
 logins:
-    - login: ${{ secrets.WAMUD_LOGIN1}}
-      password: ${{ secrets.WAMUD_PASSWORD1}}
+    - login: __LOGIN1__
+      password: __PASSWORD1__
       server: 3
-    - login: ${{ secrets.WAMUD_LOGIN2}}
-      password: ${{ secrets.WAMUD_PASSWORD2}}
+    - login: __LOGIN2__
+      password: __PASSWORD2__
       server: 3
-    - login: ${{ secrets.WAMUD_LOGIN3}}
-      password: ${{ secrets.WAMUD_PASSWORD3}}
+    - login: __LOGIN3__
+      password: __PASSWORD3__
       server: 3
-    - login: ${{ secrets.WAMUD_LOGIN4}}
-      password: ${{ secrets.WAMUD_PASSWORD4}}
+    - login: __LOGIN4__
+      password: __PASSWORD4__
       server: 3
-    - login: ${{ secrets.WAMUD_LOGIN5}}
-      password: ${{ secrets.WAMUD_PASSWORD4}}
+    - login: __LOGIN5__
+      password: __PASSWORD5__
       server: 3      

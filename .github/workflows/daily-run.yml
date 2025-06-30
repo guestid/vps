@@ -13,11 +13,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Initialization Values
+        run: |
+          echo "WRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
+          
       - name: Setup workspace
         run: |
           cd wsdaily_linux_amd64
           chmod +x wsdaily
           
       - name: Execute daily task
-        run: ./wsdaily --mode run
+        run: ./wsdaily --mode > run output.log
         working-directory: ./wsdaily_linux_amd64
+        
+      - name: Upload firmware directory
+        uses: actions/upload-artifact@main
+        with:
+          name: ${{ env.WRT_DATE }}
+          path: ./wrt/upload/        

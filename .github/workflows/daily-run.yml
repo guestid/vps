@@ -49,7 +49,7 @@ jobs:
         run: ./wsdaily --mode run > output.log
         working-directory: ./wsdaily_linux_amd64
         
-      - name: Upload firmware directory
+      - name: Upload output
         uses: actions/upload-artifact@main
         with:
           name: ${{ env.WRT_DATE }}

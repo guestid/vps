@@ -25,7 +25,8 @@ jobs:
       - name: Initialization Values
         run: |
           echo "WRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
-          
+          sudo timedatectl set-timezone "$TZ"
+        
       - name: Setup workspace
         run: |
           cd wsdaily_linux_amd64

@@ -8,7 +8,7 @@ pushtg_token:
 # 用户id 通过 IDBot 获取  (非必需,但请不要乱填)
 pushtg_chat_id: 
 # 黑名单 在名单内跳过日常,英文逗号分隔
-blacklist: 魏舷则,明徒生,明徒宝恶,明徒再科,明徒息,明徒向,明徒伤,明徒练型,明徒离,明徒生,明徒宝恶,明徒再科,明徒险张,明徒创
+blacklist: 金毛狮王,魏舷则,明徒生,明徒宝恶,明徒再科,明徒息,明徒向,明徒伤,明徒练型,明徒离,明徒生,明徒宝恶,明徒再科,明徒险张,明徒创
 # 扫荡任务  需要扫荡的在对应副本的player中输入角色名,多个角色使用英文逗号分隔  例如:张三,李四
 dungeonfast:
   - dungeon: 光明顶
@@ -36,7 +36,7 @@ dungeonfast:
   - dungeon: 战神殿(简单)
     player:
   - dungeon: 战神殿(困难)
-    player: 
+    player: 張无忌
 logins:
     - login: __LOGIN1__
       password: __PASSWORD1__

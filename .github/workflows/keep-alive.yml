@@ -1,4 +1,4 @@
-name: Keep Repo Alive (Prevent 60-day disable)
+name: Keep Repo Alive
 on:
   schedule:
     - cron: '0 0 */30 * *'  # 每 30 天 0 点 UTC 执行一次
